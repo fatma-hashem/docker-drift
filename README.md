@@ -34,14 +34,6 @@ Clone the repo and make the script executable:
 git clone https://github.com/<your-username>/docker-drift.git
 cd docker-drift
 chmod +x dockerdrift.sh
-Docker Drift Detector
-
-Detects differences between running containers and their original images.
-
-## Features
-- File system change detection
-- Package difference checking
-- Multiple output formats (Markdown/JSON)
 
 ## Usage
 ```bash
