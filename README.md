@@ -49,8 +49,7 @@ docker exec my-test-container apt-get install -y curl
 *Docker Drift helps catch those issues early.**
 
 ---
-## Usage
-./dockerdrift.sh scan <container_name> [--format json]
+
 
 ## Installation 
 Clone the repo and make the script executable:
