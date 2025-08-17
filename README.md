@@ -27,8 +27,6 @@ This leads to:
 **Docker Drift helps catch those issues early.**
 
 ---
-## Usage
-./dockerdrift.sh scan <container_name> [--format json]
 
 ## Installation 
 Clone the repo and make the script executable:
@@ -92,5 +90,9 @@ curl 8.2.1-1ubuntu3
 ```yaml
 - name: Run Docker Drift
   run: ./drift.sh my-test-container
+```
+### Note on Testing Containers
 
-
+During testing (for example, in the Step-by-Step Example and GitHub Actions), we sometimes compare two running containers instead of a container and its original image.
+This is for demonstration purposes: one container simulates the “original” image, while the other is modified to show how drift is detected.
+In practice, Docker Drift compares a container to its original image to detect filesystem or package changes.
