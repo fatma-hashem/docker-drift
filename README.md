@@ -59,6 +59,27 @@ Package Drift:
 Added:
 curl 8.2.1-1ubuntu3
 ```
+### HTML Report
+After running `drift.sh`, an HTML report (`drift-report.html`) will be generated automatically in the same folder.  
+The report shows:
+- Filesystem drift (Added / Changed / Deleted files)
+- Package drift (Added / Removed packages)
+- Summary counts
+To open the HTML Report, you need to run a command depending on your OS
+## Linux
+```bash
+xdg-open drift-report.html
+```
+## macOS
+```bash
+open drift-report.html
+```
+## Windows (Git Bash / WSL)
+```bash
+explorer drift-report.html
+```
+## Any OS (manual)
+Open your browser and navigate to file:///path/to/drift-report.html.
 
 ### Run in CI/CD
 
