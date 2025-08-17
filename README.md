@@ -1,4 +1,4 @@
-# # 🐳 Docker Drift
+# 🐳 Docker Drift
 
 Detect and report **drift** between running Docker containers and their original images.  
 Drift occurs when files, packages, or configurations inside a container are changed without updating the Dockerfile.
@@ -46,7 +46,6 @@ docker exec my-test-container apt-get install -y curl
 #Run Docker Drift:
 ./dockerdrift.sh my-test-container
 ```
-*Docker Drift helps catch those issues early.**
 
 ---
 
