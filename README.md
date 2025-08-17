@@ -7,7 +7,7 @@ Drift occurs when files, packages, or configurations inside a container are chan
 
 ## Features
 -  File system change detection (`docker diff`)
--  Package difference checking (coming soon)
+-  Package difference checking 
 -  Multiple output formats (Markdown / JSON)
 -  CI/CD-friendly exit codes for automation
 
