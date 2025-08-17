@@ -64,11 +64,7 @@ curl 8.2.1-1ubuntu3
 
 1. Push a change to your repo (or open a pull request).
 2. GitHub Actions will automatically run `drift.sh` and report drift in the workflow logs.
-3. Example workflow snippet:
-```yaml
-- name: Run Docker Drift
-  run: ./drift.sh my-test-container
-```
+
 ### Note on Testing Containers
 
 During testing (for example, in the Step-by-Step Example and GitHub Actions), we sometimes compare two running containers instead of a container and its original image.
