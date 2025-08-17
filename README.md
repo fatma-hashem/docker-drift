@@ -36,5 +36,61 @@ Clone the repo and make the script executable:
 git clone https://github.com/<your-username>/docker-drift.git
 cd docker-drift
 chmod +x dockerdrift.sh
+```
+### Step-by-Step Example
+
+1. Start a container to test drift:
+```bash
+docker run -d --name my-test-container ubuntu sleep 60
+#Install a package manually inside the container to simulate drift:
+docker exec my-test-container apt-get update
+docker exec my-test-container apt-get install -y curl
+#Run Docker Drift:
+./dockerdrift.sh my-test-container
+```
+*Docker Drift helps catch those issues early.**
+
+---
+## Usage
+./dockerdrift.sh scan <container_name> [--format json]
+
+## Installation 
+Clone the repo and make the script executable:
+```bash
+git clone https://github.com/<your-username>/docker-drift.git
+cd docker-drift
+chmod +x dockerdrift.sh
+```
+### Step-by-Step Example
+
+1. Start a container to test drift:
+```bash
+docker run -d --name my-test-container ubuntu sleep 60
+#Install a package manually inside the container to simulate drift:
+docker exec my-test-container apt-get update
+docker exec my-test-container apt-get install -y curl
+#Run Docker Drift:
+./dockerdrift.sh my-test-container
+```
+```## Example Output:
+Scanning container: my-test-container
+
+Filesystem Drift:
+C /etc/apt/sources.list
+A /usr/bin/curl
+
+Package Drift:
+Added:
+curl 8.2.1-1ubuntu3
+```
+
+### Run in CI/CD
+
+1. Push a change to your repo (or open a pull request).
+2. GitHub Actions will automatically run `drift.sh` and report drift in the workflow logs.
+3. Example workflow snippet:
+```yaml
+- name: Run Docker Drift
+  run: ./drift.sh my-test-container
 
 
