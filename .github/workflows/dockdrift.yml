@@ -17,16 +17,21 @@ jobs:
 
       - name: Build test container
         run: |
+           # Base container
+          docker run -d --name base-container ubuntu sleep 60
+          
+          # Modified container
           docker run -d --name test-container ubuntu sleep 60
           docker exec test-container apt-get update
           docker exec test-container apt-get install -y curl
-
       - name: Run Docker Drift
         run: |
           chmod +x drift.sh
-          ./drift.sh ubuntu:latest test-container
+          ./drift.sh base-container test-container
 
       - name: Cleanup
         if: always()
-        run: docker rm -f test-container || true
+        run: |
+          docker rm -f base-container || true
+          docker rm -f test-container || true
 
