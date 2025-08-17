@@ -5,15 +5,15 @@ Drift occurs when files, packages, or configurations inside a container are chan
 
 ---
 
-## ✨ Features
-- 🔍 File system change detection (`docker diff`)
-- 📦 Package difference checking (coming soon)
-- 📑 Multiple output formats (Markdown / JSON)
-- ⚡ CI/CD-friendly exit codes for automation
+## Features
+-  File system change detection (`docker diff`)
+-  Package difference checking (coming soon)
+-  Multiple output formats (Markdown / JSON)
+-  CI/CD-friendly exit codes for automation
 
 ---
 
-## 🚀 Why Docker Drift?
+## Why Docker Drift?
 In DevOps and production environments, containers often **drift** when:
 - Packages are manually installed inside running containers  
 - Configurations are updated without changing the image  
@@ -27,14 +27,14 @@ This leads to:
 **Docker Drift helps catch those issues early.**
 
 ---
+## Usage
+./dockerdrift.sh scan <container_name> [--format json]
 
-## 📦 Installation
+## Installation 
 Clone the repo and make the script executable:
 ```bash
 git clone https://github.com/<your-username>/docker-drift.git
 cd docker-drift
 chmod +x dockerdrift.sh
 
-## Usage
-```bash
-./dockerdrift.sh scan <container_name> [--format json]
+
